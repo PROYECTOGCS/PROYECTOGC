@@ -8,15 +8,10 @@ use App\Models\Clausula as Clausula;
 
 class ClausulaController extends Controller {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
 		$clausulas = Clausula::all();
-		return \View::make('list_clausula',compact('clausulas'));
+		return \View::make('clausula/list_clausula',compact('clausulas'));
 	}
 
 	/**
@@ -26,7 +21,7 @@ class ClausulaController extends Controller {
 	 */
 	public function create()
 	{
-		return \View::make('new_clausula');
+		return \View::make('clausula/new_clausula');
 	}
 
 	/**
@@ -63,7 +58,7 @@ class ClausulaController extends Controller {
 	public function edit($id)
 	{
 		$clausula = Clausula::find($id);
-		return \View::make('update_clausula',compact('clausula'));
+		return \View::make('clausula/update_clausula',compact('clausula'));
 	}
 
 	/**
@@ -96,7 +91,7 @@ class ClausulaController extends Controller {
 	public function search(Request $request)
 	{
 		$clausulas=Clausula::where('formato','like','%'.$request->formato.'%')->get();
-		return \View::make('list_clausula',compact('clausulas'));
+		return \View::make('clausula/list_clausula',compact('clausulas'));
 
 	}
 }

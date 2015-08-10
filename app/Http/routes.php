@@ -28,4 +28,13 @@ Route::post('clausula/search',['as' => 'clausula/search', 'uses'=>'ClausulaContr
 Route::resource('supervisor','SupervisorController');
 Route::get('supervisor/destroy/{id}',['as' => 'supervisor/destroy','uses'=>'SupervisorController@destroy']);
 Route::post('supervisor/search',['as' => 'supervisor/search', 'uses'=>'SupervisorController@search']);	
+/**/
+Route::resource('cdp','CdpController');
+Route::get('cdp/destroy/{id}',['as' => 'cdp/destroy','uses'=>'CdpController@destroy']);
+Route::post('cdp/search',['as' => 'cdp/search', 'uses'=>'CdpController@search']);	
+
+/**/
+Route::resource('contrato','ContratoController');
+Route::get('contrato/destroy/{id}',['as' => 'contrato/destroy','uses'=>'ContratoController@destroy']);
+Route::post('contrato/search',['as' => 'contrato/search', 'uses'=>'ContratoController@search']);	
 
